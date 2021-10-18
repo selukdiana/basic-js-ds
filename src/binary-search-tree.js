@@ -77,7 +77,7 @@ module.exports = class BinarySearchTree {
   }
   find(data) {
     let currentNode = this.roott;
-    findorder(currentNode, data)
+    this.findorder(currentNode, data);
   }
 
   minNode(node) {
@@ -132,17 +132,17 @@ module.exports = class BinarySearchTree {
   }
   min() {
     let currentNode = this.roott
-    minorder(currentNode)
+    this.minorder(currentNode)
   }
 
   maxorder(node) {
     if (node.right === null)
         return node;
     else
-        return this.minorder(node.right);
+        return this.maxorder(node.right);
   }
   max() {
     let currentNode = this.roott
-    maxorder(currentNode)
+    this.maxorder(currentNode)
   }
 }
